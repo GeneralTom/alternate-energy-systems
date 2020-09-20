@@ -6,7 +6,7 @@ class Wind:
         self.dates = dates
         self.speeds = speeds
 
-    def plot_data():
+    def plot_speed():
         fig = plt.figure()
         fig, ax = plt.subplots()
         ax.plot(self.dates, self.speeds)

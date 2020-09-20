@@ -11,6 +11,7 @@ def main():
 
     wind = Wind(data[:, 0], data[:, 1])
     print(wind.average_speed())
+    wind.plot_speed()
 
 if __name__ == "__main__":
     main()
