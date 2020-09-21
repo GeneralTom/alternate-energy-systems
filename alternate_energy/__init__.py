@@ -1,1 +1,1 @@
-from .wind import Wind
+from .wind_energy import WindEnergy

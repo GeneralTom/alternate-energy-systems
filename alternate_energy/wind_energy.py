@@ -1,16 +1,21 @@
 import numpy as np
 import pandas as pd
+import matplotlib.dates as dates
 import matplotlib.pyplot as plt
 
-class Wind:
+class WindEnergy:
     def __init__(self, dates, speeds):
         self.dates = dates
         self.speeds = speeds
 
     def plot_speed(self):
+        converted_dates = dates.datestr2num(self.dates)
         fig, ax = plt.subplots()
-        ax.plot(self.dates, self.speeds)
+        ax.xaxis.set_major_formatter(dates.DateFormatter('%m/%d/%Y %H:%M'))
+        ax.xaxis.set_major_locator(dates.DayLocator(interval=25))
+        ax.plot(converted_dates, self.speeds)
         ax.set_ylabel('Speed [m/s]')
+        fig.autofmt_xdate()
         plt.show()
 
     def average_speed(self):

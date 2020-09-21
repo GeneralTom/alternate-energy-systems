@@ -4,16 +4,16 @@ import sys
 
 site.addsitedir('.')
 
-from alternate_energy import Wind
+from alternate_energy import WindEnergy
 
 def main():
     data = pd.read_csv('assignments/homework3/2006_tx.csv', header=0).values
 
-    wind = Wind(data[:, 0], data[:, 1])
+    wind = WindEnergy(data[:, 0], data[:, 1])
     # Part 1: Plot data and calculate average wind speed
     print(" ".join([str(wind.average_speed()), "m/s"]))
     # TODO: Plot data
-    # wind.plot_speed()
+    wind.plot_speed()
 
     # Part 2: Calculate and plot pdf (probability vs wind speed)
     binned_data = wind.bin_data(data, num_bins=32)
