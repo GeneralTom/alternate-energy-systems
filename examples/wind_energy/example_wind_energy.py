@@ -1,13 +1,13 @@
 import pandas as pd
-import site
-import sys
+# import site
+# import sys
 
-site.addsitedir('.')
+# site.addsitedir('.')
 
 from alternate_energy import WindEnergy
 
 def main():
-    data = pd.read_csv('assignments/homework3/2006_tx.csv', header=0).values
+    data = pd.read_csv('examples/wind_energy/2006_tx.csv', header=0).values
 
     wind = WindEnergy(data[:, 0], data[:, 1])
     # Part 1: Plot data and calculate average wind speed
